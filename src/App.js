@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Line } from 'react-chartjs-2';
+import { HorizontalBar } from 'react-chartjs-2';
 
 function App() {
   const lineRef = useRef(null);
@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <Line
+    <HorizontalBar
       ref={lineRef}
       data={data}
       onElementsClick={onElementsClick}
