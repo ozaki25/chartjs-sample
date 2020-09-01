@@ -41,7 +41,9 @@
 
     document.getElementById('myChart').addEventListener('click', e => {
       const elements = chart.getElementAtEvent(e);
-      if (elements.length) alert(elements[0]._model.label);
+      if (elements.length) {
+        alert(`${elements[0]._index}: ${elements[0]._model.label}`);
+      }
     });
   </script>
 </html>
