@@ -1,55 +1,40 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { HorizontalBar } from 'react-chartjs-2';
 
 function App() {
-  const lineRef = useRef(null);
-
   const data = {
-    labels: ['Label1', 'Label2', 'Label3', 'Label4', 'Label5'],
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label: 'Value',
-        data: [1, 4, 2, 5, 3],
+        label: 'My First dataset',
+        data: [3, 10, 5, 2, 20, 30, 45],
       },
     ],
   };
 
-  const onClick = elems => {
-    console.log('onClick');
-    console.log(elems);
-    console.log(lineRef.current);
+  const options = {
+    // scales: {
+    //   xAxes: [
+    //     {
+    //       ticks: {
+    //         min: 1,
+    //       },
+    //     },
+    //   ],
+    // },
   };
 
-  const onElementsClick = elems => {
+  const onElementsClick = elements => {
     console.log('onElementsClick');
-    console.log(elems);
-    if (elems.length) alert(elems[0]._model.label);
-  };
-
-  const getElementsAtEvent = elems => {
-    console.log('getElementsAtEvent');
-    console.log(elems);
-  };
-
-  const getElementAtEvent = elems => {
-    console.log('getElementAtEvent');
-    console.log(elems);
-  };
-
-  const getDatasetAtEvent = elems => {
-    console.log('getDatasetAtEvent');
-    console.log(elems);
+    console.log(elements);
+    if (elements.length) alert(elements[0]._model.label);
   };
 
   return (
     <HorizontalBar
-      ref={lineRef}
       data={data}
       onElementsClick={onElementsClick}
-      // getElementsAtEvent={getElementsAtEvent}
-      // getElementAtEvent={getElementAtEvent}
-      // getDatasetAtEvent={getDatasetAtEvent}
-      // options={{ onClick }}
+      options={options}
     />
   );
 }
