@@ -14,6 +14,12 @@ function App() {
     ],
   };
 
+  const onClick = elems => {
+    console.log('onClick');
+    console.log(elems);
+    console.log(lineRef.current);
+  };
+
   const onElementsClick = elems => {
     console.log('onElementsClick');
     console.log(elems);
@@ -43,6 +49,7 @@ function App() {
       getElementsAtEvent={getElementsAtEvent}
       getElementAtEvent={getElementAtEvent}
       getDatasetAtEvent={getDatasetAtEvent}
+      options={{ onClick }}
     />
   );
 }
