@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>chartjs sample</title>
+  </head>
+  <canvas id="myChart"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+        labels: [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+        ],
+        datasets: [
+          {
+            label: 'My First dataset',
+            data: [3, 10, 5, 2, 20, 30, 45],
+          },
+        ],
+      },
+      // options: {
+      //   scales: {
+      //     xAxes: [
+      //       {
+      //         ticks: {
+      //           min: 1,
+      //         },
+      //       },
+      //     ],
+      //   },
+      // },
+    });
+
+    document.getElementById('myChart').addEventListener('click', e => {
+      const elements = chart.getElementAtEvent(e);
+      if (elements.length) alert(elements[0]._model.label);
+    });
+  </script>
+</html>
