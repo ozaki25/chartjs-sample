@@ -27,7 +27,9 @@ function App() {
   const onElementsClick = elements => {
     console.log('onElementsClick');
     console.log(elements);
-    if (elements.length) alert(elements[0]._model.label);
+    if (elements.length) {
+      alert(`${elements[0]._index}: ${elements[0]._model.label}`);
+    }
   };
 
   return (
