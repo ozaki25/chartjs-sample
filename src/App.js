@@ -23,7 +23,7 @@ function App() {
   const onElementsClick = elems => {
     console.log('onElementsClick');
     console.log(elems);
-    console.log(lineRef.current);
+    if (elems.length) alert(elems[0]._model.label);
   };
 
   const getElementsAtEvent = elems => {
@@ -46,10 +46,10 @@ function App() {
       ref={lineRef}
       data={data}
       onElementsClick={onElementsClick}
-      getElementsAtEvent={getElementsAtEvent}
-      getElementAtEvent={getElementAtEvent}
-      getDatasetAtEvent={getDatasetAtEvent}
-      options={{ onClick }}
+      // getElementsAtEvent={getElementsAtEvent}
+      // getElementAtEvent={getElementAtEvent}
+      // getDatasetAtEvent={getDatasetAtEvent}
+      // options={{ onClick }}
     />
   );
 }
